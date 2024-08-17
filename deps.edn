@@ -1,4 +1,5 @@
-{:deps {babashka/fs {:mvn/version "0.5.22"}
+{:paths ["src" "resources"]
+ :deps {babashka/fs {:mvn/version "0.5.22"}
         hiccup/hiccup {:mvn/version "2.0.0-RC3"}
         http-kit/http-kit {:mvn/version "2.8.0-SNAPSHOT"}
         io.github.nextjournal/clerk {:mvn/version "0.16.1016"}

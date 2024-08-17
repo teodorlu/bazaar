@@ -1,7 +1,9 @@
 ^{:nextjournal.clerk/visibility {:code :hide :result :hide}}
 (ns bazaar.easy-parallellism-with-pipeline-blocking
   {:nextjournal.clerk/toc :collapsed}
-  (:refer-clojure :exclude [time]))
+  (:refer-clojure :exclude [time])
+  (:require
+    [babashka.fs :as fs]))
 
 ^{:nextjournal.clerk/visibility {:code :hide}}
 (do
@@ -377,6 +379,11 @@
 
 ^{:nextjournal.clerk/visibility {:result :hide :code :hide}}
 (comment
-  (clerk/build! {:paths [(fs/file-name *file*)] :out-path "."})
+  (let [slug "easy-parallellism-with-pipeline-blocking"
+        out-path (str (fs/file "resources" "public" slug))]
+    (fs/create-dirs out-path)
+    (clerk/build! {:paths [(str (fs/file "src" "bazaar" "easy_parallellism_with_pipeline_blocking.clj"))]
+                   :out-path out-path}))
+
   (clerk/clear-cache!)
-  :rcf)
+  ,)
