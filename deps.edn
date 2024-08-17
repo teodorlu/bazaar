@@ -1,7 +1,7 @@
-{:deps {http-kit/http-kit {:mvn/version "2.8.0-SNAPSHOT"}
-        ring/ring-core {:mvn/version "1.12.1"}
+{:deps {babashka/fs {:mvn/version "0.5.22"}
         hiccup/hiccup {:mvn/version "2.0.0-RC3"}
-        io.github.nextjournal/garden-cron {:git/sha "23d5af087f2c76cc884273883b18d30cb4fa4997"}
-        io.github.nextjournal/garden-id {:git/sha "06b67b5cf77d4d0573975f6cbe9bb6d69cce60eb"}
-        io.github.nextjournal/garden-email {:git/sha "ca4e1d7f5fefba1501ebd83d71b9cf409cb94080"}}
- :aliases {:nextjournal/garden {:exec-fn microscopic-scooter-83/start!}}}
+        http-kit/http-kit {:mvn/version "2.8.0-SNAPSHOT"}
+        io.github.nextjournal/clerk {:mvn/version "0.16.1016"}
+        org.clojure/core.async {:mvn/version "1.6.681"}
+        ring/ring-core {:mvn/version "1.12.1"}}
+ :aliases {:nextjournal/garden {:exec-fn bazaar/start!}}}
